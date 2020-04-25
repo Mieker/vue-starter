@@ -18,7 +18,7 @@ import "milligram";
 import LoginForm from "./LoginForm";
 
 export default {
-  components: {LoginForm},
+  components: { LoginForm },
   data() {
     return {
       authenticatedUsername: ""
@@ -30,7 +30,7 @@ export default {
       this.authenticatedUsername = username;
     },
     logMeOut() {
-      this.authenticatedUsername = '';
+      this.authenticatedUsername = "";
     }
   }
 };
