@@ -1,36 +1,40 @@
 <template>
   <div>
     <h1>Witaj w systemie do zapisow na zajecia</h1>
-    <div v-if="logButtonPressed == false">
-      <p>Zaloguj sie e-mailem</p>
-      <input type="email" v-model="email">
-      <button @click="logButtonPressed = true">Wchodze</button>
+
+    <div v-if="authenticatedUsername">
+      <h3>Zalogowany jako: {{authenticatedUsername}}</h3>
+      <a @click="logMeOut()">Wyloguj</a>
     </div>
+
     <div v-else>
-      <h2>Witaj {{email}}</h2>
-      <a href="">Wyloguj</a>
+      <p>Zaloguj sie e-mailem</p>
+      <input type="email" v-model="email" />
+      <button @click="logMeIn()">Zaloguj sie</button>
     </div>
-   </div>
+  </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      email: '',
-      logButtonPressed: false
+      email: "",
+      authenticatedUsername: ""
     };
   },
 
   methods: {
-    alertMyEmail() {
-      alert(this.email);
+    logMeIn() {
+      this.authenticatedUsername = this.email;
+      this.email = '';
     },
-    
+    logMeOut() {
+      this.authenticatedUsername = '';
+    }
   }
-}
+};
 </script>
 
 <style>
-
 </style>
