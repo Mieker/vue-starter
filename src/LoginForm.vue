@@ -9,11 +9,6 @@
 <script>
 export default {
   props: ["buttonLabel"],
-//   mounted() {
-// 	  if (!this.buttonLabel) {
-// 		  this.buttonLabel = 'Zaloguj sie';
-// 	  }
-//   },
   data() {
     return {
       email: ""
