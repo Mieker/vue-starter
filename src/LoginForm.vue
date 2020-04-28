@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  props: ["buttonLabel"],
+  props: ['logInButtonLabel'],
   data() {
     return {
       email: ""
@@ -21,7 +21,7 @@ export default {
   },
   computed: {
 	  buttonLabelToDisplay() {
-		  return this.buttonLabel || 'Zaloguj sie';
+		  return this.logInButtonLabel || 'Zaloguj sie';
 	  }
   }
 };

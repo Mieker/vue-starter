@@ -1,24 +1,23 @@
 <template>
-  <div>
-    <h1>Witaj w systemie do zapisow na zajecia</h1>
+	<div>
+    	<h1>System do zapisów na zajęcia</h1>
 
-    <div v-if="authenticatedUsername">
-      <h3>Zalogowany jako: {{authenticatedUsername}}</h3>
-      <a @click="logMeOut()">Wyloguj</a>
-    </div>
-
-    <div v-else>
-      <login-form @login="logMeIn($event)"></login-form>
-    </div>
-  </div>
+		<div v-if="authenticatedUsername">
+			<greeting-form :user="authenticatedUsername" @login="logMeOut()"></greeting-form>
+		</div>
+    	<div v-else>
+      		<login-form @login="logMeIn($event)"></login-form>
+    	</div>
+  	</div>
 </template>
 
 <script>
 import "milligram";
 import LoginForm from "./LoginForm";
+import GreetingForm from "./GreetingForm";
 
 export default {
-  components: { LoginForm },
+  components: { LoginForm, GreetingForm },
   data() {
     return {
       authenticatedUsername: ""
