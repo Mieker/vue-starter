@@ -4,6 +4,8 @@
             <tr>
                 <th>Nazwa spotkania</th>
                 <th>Opis</th>
+                <th>Uczestnicy</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -13,6 +15,9 @@
             </tr>
         </tbody>
     </table>
+    <div v-else>
+    	<p>Brak zaplanowanych spotkań.</p>
+    </div>
 </template>
 
 <script>

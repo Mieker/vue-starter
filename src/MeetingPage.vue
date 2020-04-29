@@ -1,9 +1,9 @@
 <template>
-    <div>
-       <h2>Zajęcia</h2>
-       <new-meeting-form @added="addNewMeeting($event)"></new-meeting-form>
-       <meetings-list :meetings="meetings"></meetings-list>
-    </div>
+<div>
+	<button v-if="!isAddButtonClicked" @click="isAddButtonClicked=true">{{buttonLabelToDisplay}}</button>
+	<new-meeting-form v-else @added="addNewMeeting($event)"></new-meeting-form>
+	<meetings-list :meetings="meetings"></meetings-list>
+</div>
 </template>
 
 <script>
@@ -11,16 +11,24 @@ import NewMeetingForm from "./NewMeetingForm";
 import MeetingsList from "./MeetingsList";
 
 export default {
-  components: {NewMeetingForm, MeetingsList},
+  	props: ['addNewMeetingButtonLabel'],
+	components: {NewMeetingForm, MeetingsList},
   data() {
       return {
-          meetings: []
+          meetings: [],
+          isAddButtonClicked: false,
       };
   },
   methods: {
       addNewMeeting(meeting) {
           this.meetings.push(meeting);
-      }
+    	  this.isAddButtonClicked = false;
+      },
+  },
+  computed: {
+	  buttonLabelToDisplay() {
+		  return this.addNewMeetingButtonLabel || 'Dodaj nowe spotkanie';
+	  }
   }
 }
 </script>
