@@ -1,7 +1,7 @@
 <template>
 <div>
-	<button v-if="!isAddButtonClicked" @click="isAddButtonClicked=true">{{buttonLabelToDisplay}}</button>
-	<new-meeting-form v-else @added="addNewMeeting($event)"></new-meeting-form>
+	<button v-show="!isAddButtonClicked" @click="isAddButtonClicked=true">{{buttonLabelToDisplay}}</button>
+	<new-meeting-form v-show="isAddButtonClicked" @added="addNewMeeting($event)"></new-meeting-form>
 	<meetings-list :meetings="meetings"></meetings-list>
 </div>
 </template>

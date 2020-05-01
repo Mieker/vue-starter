@@ -1,5 +1,6 @@
 <template>
-    <div v-if="meetings.length > 0">
+    <div>
+    <div v-show="meetings.length > 0">
     <h4>Zaplanowane zajęcia ({{meetings.length}})</h4>
     <table>
         <thead>
@@ -18,8 +19,9 @@
         </tbody>
     </table>
     </div>
-    <div v-else>
+    <div v-if="meetings.length <= 0">
     	<p>Brak zaplanowanych spotkań.</p>
+    </div>
     </div>
 </template>
 
