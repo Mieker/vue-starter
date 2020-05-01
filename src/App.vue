@@ -4,7 +4,7 @@
 
 		<div v-show="authenticatedUsername">
 			<greeting :user="authenticatedUsername" @login="logMeOut()"></greeting></br>
-			<meeting-page></meeting-page>
+			<meeting-page :username="authenticatedUsername"></meeting-page>
 		</div>
     	<div v-if="!authenticatedUsername">
       		<login-form @login="logMeIn($event)"></login-form>

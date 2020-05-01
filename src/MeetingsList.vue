@@ -15,6 +15,7 @@
             <tr v-for="meeting in meetings" :key="meeting.name">
                 <td >{{ meeting.name }}</td>
                 <td>{{ meeting.description }}</td>
+                <td><meeting-enroller :username="username"></meeting-enroller></td>
             </tr>
         </tbody>
     </table>
@@ -26,8 +27,11 @@
 </template>
 
 <script>
+import MeetingEnroller from "./MeetingEnroller";
+
 export default {
-    props: ['meetings'],
+    props: ['meetings', 'username'],
+    components: {MeetingEnroller},
     
 }
 </script>

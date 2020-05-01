@@ -2,7 +2,7 @@
 <div>
 	<button v-show="!isAddButtonClicked" @click="isAddButtonClicked=true">{{buttonLabelToDisplay}}</button>
 	<new-meeting-form v-show="isAddButtonClicked" @added="addNewMeeting($event)"></new-meeting-form>
-	<meetings-list :meetings="meetings"></meetings-list>
+	<meetings-list :meetings="meetings" :username="username"></meetings-list>
 </div>
 </template>
 
@@ -11,7 +11,7 @@ import NewMeetingForm from "./NewMeetingForm";
 import MeetingsList from "./MeetingsList";
 
 export default {
-  	props: ['addNewMeetingButtonLabel'],
+  	props: ['addNewMeetingButtonLabel', 'username'],
 	components: {NewMeetingForm, MeetingsList},
   data() {
       return {
