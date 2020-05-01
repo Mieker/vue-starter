@@ -20,7 +20,7 @@
     </table>
     </div>
     <div v-if="meetings.length <= 0">
-    	<p>Brak zaplanowanych spotkań.</p>
+    	<p>Brak zaplanowanych spotkan.</p>
     </div>
     </div>
 </template>
