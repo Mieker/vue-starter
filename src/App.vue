@@ -1,6 +1,6 @@
 <template>
 	<div>
-    	<h1>System do zapisów na zajęcia</h1>
+    	<h1>System do zapisow na zajecia</h1>
 
 		<div v-show="authenticatedUsername">
 			<greeting :user="authenticatedUsername" @login="logMeOut()"></greeting></br>

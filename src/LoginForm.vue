@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label>Zaloguj się e-mailem</label>
+    <label>Zaloguj sie e-mailem</label>
     <input type="email" v-model="email" text="sad"/>
     <button @click="enter()">{{buttonLabelToDisplay}}</button>
   </div>

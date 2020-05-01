@@ -1,7 +1,7 @@
 <template>
     <div>
     <div v-show="meetings.length > 0">
-    <h4>Zaplanowane zajęcia ({{meetings.length}})</h4>
+    <h4>Zaplanowane zajecia ({{meetings.length}})</h4>
     <table>
         <thead>
             <tr>

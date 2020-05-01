@@ -5,9 +5,9 @@
 		</li>
 	</ul>
 		<div id="enrollerButtons">
-			<button class="button button-outline" v-if="!isUsersContains()" @click="addUser()">Zapisz się</button>
-			<button v-if="this.users.length <= 0" @click="$emit('deleteMeeting', meetingID)">Usuń puste spotkanie</button>
-			<button class="button button-outline" v-if="isUsersContains()" @click="removeUser()">Wypisz się</button>
+			<button class="button button-outline" v-if="!isUsersContains()" @click="addUser()">Zapisz sie</button>
+			<button v-if="this.users.length <= 0" @click="$emit('deleteMeeting', meetingID)">Usun puste spotkanie</button>
+			<button class="button button-outline" v-if="isUsersContains()" @click="removeUser()">Wypisz sie</button>
 		</div>
 	</div>
 </template>
