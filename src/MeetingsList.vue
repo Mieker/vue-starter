@@ -5,17 +5,16 @@
     <table>
         <thead>
             <tr>
-                <th>Nazwa spotkania</th>
-                <th>Opis</th>
-                <th>Uczestnicy</th>
-                <th></th>
+                <th class="nameCol">Nazwa spotkania</th>
+                <th class="descriptionCol">Opis</th>
+                <th class="membersCol">Uczestnicy</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="meeting in meetings" :key="meeting.name">
-                <td >{{ meeting.name }}</td>
-                <td>{{ meeting.description }}</td>
-                <td><meeting-enroller :username="username" :meetingID="meetings.indexOf(meeting)" @deleteMeeting="deleteMeeting($event)"></meeting-enroller></td>
+                <td class="nameCol">{{ meeting.name }}</td>
+                <td class="descriptionCol">{{ meeting.description }}</td>
+                <td class="membersCol"><meeting-enroller :username="username" :meetingID="meetings.indexOf(meeting)" @deleteMeeting="deleteMeeting($event)"></meeting-enroller></td>
             </tr>
         </tbody>
     </table>
@@ -37,6 +36,17 @@ export default {
 	    	 this.meetings.splice(metNum, 1);
 	      },
 	}
-    
 }
 </script>
+
+<style>
+	.nameCol {
+		width: 15%
+	}
+	.descriptionCol {
+		width: 30%
+	}
+	.membersCol {
+		width: 55%;
+	}
+</style>

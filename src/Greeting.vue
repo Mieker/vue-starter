@@ -1,6 +1,6 @@
 <template>
  	<div>
-		<h3 id="welcome">Witaj {{user}}!</h3>
+		<h2 id="welcome">Witaj {{user}}!</h2>
 		<button id="logOutButton" class="button button-outline" @click="getOut()">{{buttonLabelToDisplay}}</button>
   	</div>
 </template>

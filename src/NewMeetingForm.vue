@@ -4,7 +4,9 @@
 	<label>Nazwa</label> <input type="text" v-model="newMeeting.name">
 	<label>Opis</label>
 	<textarea v-model="newMeeting.description"></textarea>
-	<button>Dodaj</button>
+	<!-- <button>Dodaj</button> -->
+	<input id="inputButton" type="submit" value="Dodaj">
+	<div id="errorText" v-if="submitError">Spotkanie musi mieć nazwę!</div>
 </form>
 </template>
 
@@ -12,14 +14,28 @@
 export default {
 	data() {
       return {
-          newMeeting: {}
+          newMeeting: {},
+          submitError: false
       };
   },
-  methods: {
+  	methods: {
       addNewMeeting() {
-        this.$emit('added', this.newMeeting);
-        this.newMeeting = {};
+    	  if (this.newMeeting.name) {
+    	  	this.$emit('added', this.newMeeting);
+	        this.newMeeting = {};
+    	  }
+    	  else {
+    		  this.submitError = true;
+    	  }
       },
-  }
+	},
 }
 </script>
+
+<style>
+	#errorText {
+		display: inline;
+		color: red;
+		margin-left: 10px;
+	}
+</style>

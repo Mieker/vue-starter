@@ -1,7 +1,7 @@
 <template>
 <div>
 	<button v-show="!isAddButtonClicked" @click="isAddButtonClicked=true">{{buttonLabelToDisplay}}</button>
-	<new-meeting-form v-show="isAddButtonClicked" @added="addNewMeeting($event)"></new-meeting-form>
+	<new-meeting-form v-if="isAddButtonClicked" @added="addNewMeeting($event)"></new-meeting-form>
 	<meetings-list :meetings="meetings" :username="username"></meetings-list>
 </div>
 </template>
@@ -24,7 +24,9 @@ export default {
           this.meetings.push(meeting);
     	  this.isAddButtonClicked = false;
       },
+      
   },
+  
   computed: {
 	  buttonLabelToDisplay() {
 		  return this.addNewMeetingButtonLabel || 'Dodaj nowe spotkanie';
