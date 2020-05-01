@@ -15,7 +15,7 @@
             <tr v-for="meeting in meetings" :key="meeting.name">
                 <td >{{ meeting.name }}</td>
                 <td>{{ meeting.description }}</td>
-                <td><meeting-enroller :username="username"></meeting-enroller></td>
+                <td><meeting-enroller :username="username" :meetingID="meetings.indexOf(meeting)" @deleteMeeting="deleteMeeting($event)"></meeting-enroller></td>
             </tr>
         </tbody>
     </table>
@@ -32,6 +32,11 @@ import MeetingEnroller from "./MeetingEnroller";
 export default {
     props: ['meetings', 'username'],
     components: {MeetingEnroller},
+    methods: {
+	      deleteMeeting(metNum) {
+	    	 this.meetings.splice(metNum, 1);
+	      },
+	}
     
 }
 </script>
